@@ -1980,3 +1980,8 @@ async def test_thinking_streaming():
     assert len(res.title) > 0, "title should be non-empty"
     assert len(res.content) > 0, "content should be non-empty"
     assert len(res.characters) > 0, "characters should be non-empty"
+
+@pytest.mark.asyncio
+async def test_echo_workflow():
+    res = await b.EchoWorkflow()
+    assert res == "Hello, world!"
